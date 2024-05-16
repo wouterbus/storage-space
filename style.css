@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: hsl(229, 57%, 11%);
+    color: white;
+    font-family: "Raleway", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(./images/bg-desktop.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-position-y: 340px;
+}
+
+.wrapper {
+    gap: 30px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.socials-container {
+    background-color: hsl(228, 56%, 26%);
+    padding: 40px 90px 40px 40px;
+    border-radius: 8px 70px 8px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-container {
+    background-color: hsl(229, 57%, 11%);
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.icon-container img {
+    max-height: 20px;
+}
+
+.storage-container {
+    background-color: hsl(228, 56%, 26%);
+    display: flex;
+    flex-direction: column;
+    padding: 38px;
+    min-width: 450px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.storage-container h5 {
+    font-weight: 400;
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+
+progress {
+    width: 100%;
+}
+
+.range {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 8px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.message-box {
+    position: absolute;
+    right: 38px;
+    padding: 12px 20px;
+    top: -50px;
+    border-radius: 8px 8px 0px 8px;
+    background-color: white;
+    color: hsl(229, 57%, 11%) ;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.message-box::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border: solid 20px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateY(50%);
+    border-color: transparent hsl(0, 0%, 100%) transparent transparent;
+}
+
+.message-box p {
+    font-size:12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: hsl(229, 7%, 55%);
+    letter-spacing: 1px;
+}
+
+.number {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+/*  Progress Bar */
+
+.progress-container {
+    width: 100%;
+    background-color: hsl(229, 57%, 11%);
+    height: 16px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    border-radius: 8px;
+}
+
+.progressbar {
+    background: rgb(255,163,153);
+    background: linear-gradient(90deg, rgba(255,163,153,1) 0%, rgba(255,77,151,1) 100%);    
+    width: 5.5%;
+    height: 12px;
+    border-radius: 6px;
+    position: relative;
+    animation: progress 3s ease-in-out both ;
+}
+
+.progressbar::after {
+    content: "";
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: white;
+}
+
+@keyframes progress {
+    0% {
+        width: 5.5%;
+    }
+    100% {
+        width: 81.5%;
+    }
+}
+
+@media (max-width:768px) {
+    body {
+        background-image: url(./images/bg-mobile.png);
+        background-position-y: 0 ;
+        background-size: cover;
+    }
+    .wrapper {
+    flex-direction: column;
+}
+
+.socials-container {
+    width: 100%;
+}
+
+.storage-container {
+    min-width: 325px;
+    padding-bottom: 50px;
+}
+
+.message-box {
+    top: auto;
+    bottom: -45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 180px;
+    border-radius: 8px;
+}
+
+.message-box::after {
+    display: none;
+}
+
+.storage-container h5 {
+    text-align: center;
+}
+}
